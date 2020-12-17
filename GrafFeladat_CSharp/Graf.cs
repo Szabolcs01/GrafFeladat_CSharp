@@ -78,5 +78,48 @@ namespace GrafFeladat_CSharp
             }
             return str;
         }
+       public void Szelesseg(int kezdopont)
+        {
+            var bejart = new HashSet<int>();
+            var kovetkezok = new Queue<int>();
+            kovetkezok.Enqueue(kezdopont);
+            bejart.Add(kezdopont);
+            while(kovetkezok.Count>0)
+            {
+                var k = kovetkezok.Dequeue();
+                Console.WriteLine(this.csucsok[k]);
+                foreach (El el in this.elek)
+                {
+                    if((el.Csucs1==k)&&(!bejart.Contains(el.Csucs2)))
+                    {
+                        bejart.Add(el.Csucs2);
+                        kovetkezok.Enqueue(el.Csucs2);
+                    }
+                }
+            }
+        }
+        public void Melyseg(int kezdopont)
+        {
+            var bejart = new HashSet<int>();
+            var kovetkezok = new Stack<int>();
+            kovetkezok.Push(kezdopont);
+            bejart.Add(kezdopont);
+            while (kovetkezok.Count > 0)
+            {
+                var k = kovetkezok.Pop();
+                Console.WriteLine(this.csucsok[k]);
+                foreach (El el in this.elek)
+                {
+                 if ((el.Csucs1 == k) && (!bejart.Contains(el.Csucs2)))
+                  {
+                     bejart.Add(el.Csucs2);
+                     kovetkezok.Push(el.Csucs2);
+                   }
+                }
+            }
+        }
+        
+
+        
     }
 }
