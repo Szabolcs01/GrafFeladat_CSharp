@@ -19,6 +19,9 @@
             this.id = id;
         }
 
+
+
+        //Szia
         public override string ToString()
         {
             return this.id.ToString();
