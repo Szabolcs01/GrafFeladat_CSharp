@@ -28,6 +28,8 @@ namespace GrafFeladat_CSharp
             Console.WriteLine("mélységi bejárás 0 kezdőpontból:");
             graf.Melyseg(0);
             Console.WriteLine("a gráf összefüggősége: "+graf.Osszefuggo());
+            Console.WriteLine("a gráf feszítőfája:");
+            Console.WriteLine(graf.feszitofa().ToString());
             Console.ReadLine();
             
         }
