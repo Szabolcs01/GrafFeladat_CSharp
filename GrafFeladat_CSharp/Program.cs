@@ -27,6 +27,7 @@ namespace GrafFeladat_CSharp
             graf.Szelesseg(0);
             Console.WriteLine("mélységi bejárás 0 kezdőpontból:");
             graf.Melyseg(0);
+            Console.WriteLine("a gráf összefüggősége: "+graf.Osszefuggo());
             Console.ReadLine();
             
         }
